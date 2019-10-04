@@ -14,10 +14,10 @@ const newEntry = () => {
 
 const displayData = () => {
     for(let i=0; i < data.length; i++) {
-        tbody.rows[i].cells[0].innerHTML = data.indexOf(data[i]);
+        tbody.rows[i].cells[0].innerHTML = data.indexOf(data[i]) + 1;
         tbody.rows[i].cells[1].innerHTML = data[i];
-        console.log(data.indexOf(data[i+1]));
     }
+
 }
 
 const dataToArray = (el) => {

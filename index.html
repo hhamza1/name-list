@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Name List</title>
 </head>
 <body>
-    
+    <div class="container">
+            <form class="form">
+                <input type="text" name="input-item" placeholder="Enter the value here" />
+                <button>Add Element</button>
+            </form>
+            <div class="list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th class="label">Label</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr draggable="true">
+                            <td>1</td>
+                            <td class="label">Test</td>
+                        </tr>
+                        <tr draggable="true">
+                                <td>2</td>
+                                <td class="label">Test</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -10,9 +10,9 @@
 </head>
 <body>
     <div class="container">
-            <form class="form">
+            <form id="form">
                 <input type="text" name="input-item" placeholder="Enter the value here" />
-                <button>Add Element</button>
+                <button type="submit" class="button" id="submit">Add Element</button>
             </form>
             <div class="list">
                 <table>
@@ -25,6 +25,10 @@
                     <tbody id="tbody">
                     </tbody>
                 </table>
+                <div class="state-buttons">
+                    <button class="button">Revert to Previous Order</button>
+                    <button class="button">Order by Name</button>
+                </div>
             </div>
     </div>
 

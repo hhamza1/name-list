@@ -3,11 +3,11 @@ let body = document.querySelector('body');
 let form = document.querySelector('form');
 let submit = document.querySelector('#submit');
 let localData = [];
+let previousState = []
+
+
 const sortBtn = document.querySelector('#sort');
-
-
-
-const  cellsNumber =  2;
+const reverse = document.querySelector('#reverse');
 
 
 const newEntry = () => {
@@ -30,8 +30,10 @@ const displayData = (local) => {
 
 const dataToArray = (el) => {
     localData.push(el);
+    previousState.push(el);
     localStorage.clear();
     localStorage.setItem("localData", JSON.stringify(localData));
+    localStorage.setItem("previousState", JSON.stringify(previousState));
     console.log(el);
 }
 
@@ -40,9 +42,22 @@ const dataToArray = (el) => {
 sortBtn.addEventListener('click', () => {
     console.log('triggered');
     let newLocalData = localData.sort();
+    console.log(previousState);
     localData = newLocalData;
     displayData(localData);
 });
+
+/*===============Reverse to previous State=================*/
+
+reverse.addEventListener('click', () => {
+    displayData(previousState);
+});
+
+
+
+
+
+/*===============Label Submission=================*/
 
 
 submit.addEventListener('click', (event)=> {
@@ -53,9 +68,6 @@ submit.addEventListener('click', (event)=> {
     }
     newEntry();
     displayData(localData);
-    console.log(localData);
-    console.log(localStorage);
-
 });
 
 

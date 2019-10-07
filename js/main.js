@@ -19,7 +19,6 @@ const newEntry = () => {
 }
 
 const displayData = (local) => {
-    console.log(local);
     for(let i=0; i < local.length; i++) {
             tbody.rows[i].cells[0].innerHTML = local.indexOf(local[i]) + 1;
             tbody.rows[i].cells[1].innerHTML = local[i];
@@ -34,8 +33,7 @@ const dataToArray = (el) => {
     localStorage.clear();
     localStorage.setItem("localData", JSON.stringify(localData));
     localStorage.setItem("previousState", JSON.stringify(previousState));
-    console.log(el);
-}
+    }
 
 
 /*============= Sorting method ==============*/
@@ -49,15 +47,13 @@ sortBtn.addEventListener('click', () => {
 
 /*============= Loading the localStorage method ==============*/
 window.addEventListener('load', () => {
-    let loadedData = JSON.parse(localStorage.getItem("localData"));
-    console.log(loadedData);
-    localData = loadedData;
-    console.log(localData);
+    localData = JSON.parse(localStorage.getItem("localData"));
+    previousState = JSON.parse(localStorage.getItem("localData"));
     newEntry();
     displayData(localData);
 });
 
-
+console.log('Local Data', localData);
 
 /*===============Reverse to previous State=================*/
 

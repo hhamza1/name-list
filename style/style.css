@@ -46,13 +46,6 @@ body {
     justify-self: center;
 }
 
-td, th {
-    width: 4rem;
-    height: 2rem;
-    border: 1px solid #ccc;
-    text-align: center;
-    padding: 5px;
-}
 
 th {
     background: lightblue;
@@ -63,4 +56,21 @@ th {
 .label {
     max-width: 200px;
     width: 100%;
+}
+
+
+#table{ 
+    display: table; 
+}
+
+.tr{ 
+    display: table-row; 
+}
+
+.td{ 
+    display: table-cell;
+    border: 1px solid #ccc;
+    width: 250px;
+    height: 2rem;
+    text-align: center;
 }
